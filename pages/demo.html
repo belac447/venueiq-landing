@@ -359,7 +359,10 @@
                 class="demo-frame"
                 id="demoFrame"
                 onload="hideLoading()"
-                title="VenueIQ Interactive Demo">
+                onerror="handleIframeError()"
+                title="VenueIQ Interactive Demo"
+                allow="fullscreen"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
             </iframe>
         </div>
     </div>
@@ -405,12 +408,40 @@
             document.getElementById('loading').classList.add('hidden');
         }
 
+        function handleIframeError() {
+            const loading = document.getElementById('loading');
+            loading.innerHTML = `
+                <div style="text-align: center; color: #ff6b6b;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+                    <p style="font-size: 18px; margin-bottom: 10px;">Demo Loading Error</p>
+                    <p style="font-size: 14px; color: #666;">The interactive demo failed to load. This might be due to:</p>
+                    <ul style="font-size: 14px; color: #666; text-align: left; display: inline-block; margin-top: 10px;">
+                        <li>• Network connectivity issues</li>
+                        <li>• Browser security restrictions</li>
+                        <li>• Firebase configuration problems</li>
+                    </ul>
+                    <br>
+                    <button onclick="retryDemo()" style="margin-top: 20px; padding: 10px 20px; background: #6C63FF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        Try Again
+                    </button>
+                </div>
+            `;
+        }
+
         function resetDemo() {
             const frame = document.getElementById('demoFrame');
             const loading = document.getElementById('loading');
             
             loading.classList.remove('hidden');
+            loading.innerHTML = `
+                <div class="spinner"></div>
+                <p class="loading-text">Loading interactive demo...</p>
+            `;
             frame.src = frame.src; // Reload iframe
+        }
+
+        function retryDemo() {
+            resetDemo();
         }
 
         function toggleFullscreen() {
@@ -445,12 +476,25 @@
             trackEvent('demo_loaded', 'Interactive Demo Loaded');
         });
 
+        // Track iframe errors
+        document.getElementById('demoFrame').addEventListener('error', () => {
+            trackEvent('demo_error', 'Interactive Demo Failed to Load');
+        });
+
         // Track fullscreen
         document.addEventListener('fullscreenchange', () => {
             if (document.fullscreenElement) {
                 trackEvent('demo_fullscreen', 'Entered Fullscreen');
             }
         });
+
+        // Set a timeout for loading - if iframe doesn't load within 30 seconds, show error
+        setTimeout(() => {
+            const loading = document.getElementById('loading');
+            if (!loading.classList.contains('hidden')) {
+                handleIframeError();
+            }
+        }, 30000);
     </script>
 </body>
 </html>

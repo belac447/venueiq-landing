@@ -85,11 +85,26 @@ Track traffic, conversions, and user behavior.
 
 ## 📊 Analytics Events Reference
 
-### 3. Social Sharing Image (Open Graph)
+### 3. Demo App Firebase Setup (Interactive Demo)
 
-Create a 1200x630px image for social media previews.
+The interactive demo requires Firebase configuration for data storage and authentication.
 
-**Current placeholder:**
+**Steps:**
+1. Go to [https://console.firebase.google.com/](https://console.firebase.google.com/)
+2. Create a new Firebase project (or use existing demo project)
+3. Go to Project Settings → General → Your apps → Add Web App
+4. Copy the Firebase config values
+5. **🔒 SECURE SETUP:** Go to your Netlify dashboard → Site Settings → Environment Variables
+6. Add these variables:
+   - **Key:** `DEMO_FIREBASE_API_KEY` → **Value:** Your Firebase API key
+   - **Key:** `DEMO_FIREBASE_AUTH_DOMAIN` → **Value:** Your Firebase auth domain
+   - **Key:** `DEMO_FIREBASE_PROJECT_ID` → **Value:** Your Firebase project ID
+   - **Key:** `DEMO_FIREBASE_STORAGE_BUCKET` → **Value:** Your Firebase storage bucket
+   - **Key:** `DEMO_FIREBASE_MESSAGING_SENDER_ID` → **Value:** Your messaging sender ID
+   - **Key:** `DEMO_FIREBASE_APP_ID` → **Value:** Your Firebase app ID
+   - **Key:** `DEMO_FIREBASE_MEASUREMENT_ID` → **Value:** Your GA measurement ID (optional)
+
+**Security Note:** These Firebase keys are for the demo environment only and should be separate from your production Firebase project.
 - `/images/og-image.jpg` (referenced but doesn't exist yet)
 
 **Design tips:**
