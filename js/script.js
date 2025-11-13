@@ -421,7 +421,7 @@ function initContactForm() {
         try {
             // Use Formspree endpoint - Replace with your actual Formspree form ID
             // Get yours at https://formspree.io/
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            const response = await fetch('https://formspree.io/f/<!-- FORMSPREE_FORM_ID -->', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

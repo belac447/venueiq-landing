@@ -10,12 +10,12 @@ The contact form uses Formspree for free form handling (no backend needed).
 1. Go to [https://formspree.io/](https://formspree.io/)
 2. Sign up for a free account
 3. Create a new form
-4. Copy your form endpoint (looks like `https://formspree.io/f/xpzgkjqr`)
-5. Open `js/script.js` and find line ~470:
-   ```javascript
-   const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-   ```
-6. Replace `YOUR_FORM_ID` with your actual form ID
+4. Copy your form ID (the part after `/f/` in your endpoint, e.g., `xpzgkjqr`)
+5. **🔒 SECURE SETUP:** Go to your Netlify dashboard → Site Settings → Environment Variables
+6. Add a new variable:
+   - **Key:** `FORMSPREE_FORM_ID`
+   - **Value:** Your actual form ID (e.g., `xpzgkjqr`)
+   - **Scopes:** All scopes
 
 **Free tier includes:**
 - 50 submissions per month
@@ -38,9 +38,11 @@ Track traffic, conversions, and user behavior.
 1. Go to [https://analytics.google.com/](https://analytics.google.com/)
 2. Create a new GA4 property
 3. Copy your Measurement ID (format: `G-XXXXXXXXXX`)
-4. Replace `G-XXXXXXXXXX` in TWO places:
-   - `index.html` line ~31: The gtag script source
-   - `js/analytics.js` line ~12: The gtag config
+4. **🔒 SECURE SETUP:** Go to your Netlify dashboard → Site Settings → Environment Variables
+5. Add a new variable:
+   - **Key:** `GA_MEASUREMENT_ID`
+   - **Value:** Your actual GA4 Measurement ID (e.g., `G-ABC123DEF4`)
+   - **Scopes:** All scopes
 
 **What's tracked automatically:**
 - Page views on all pages
@@ -51,13 +53,37 @@ Track traffic, conversions, and user behavior.
 - Outbound links
 - Form interactions
 
-**Events tracked:**
-- `demo_launch` - When users click demo links
-- `contact_form_submit` - Form submissions
-- `scroll_depth` - User engagement
-- `form_start` - Form field interactions
+---
+
+## 🔒 Security & API Keys
+
+**🚨 IMPORTANT:** Your API keys are now securely stored as environment variables and will never be exposed in your code repository.
+
+### What Changed:
+- **Before:** API keys were hardcoded in JavaScript files (insecure)
+- **After:** API keys are injected at build time via environment variables (secure)
+
+### Environment Variables Set Up:
+1. **GA_MEASUREMENT_ID** - Your Google Analytics 4 measurement ID
+2. **FORMSPREE_FORM_ID** - Your Formspree form identifier
+
+### Why This is Secure:
+- ✅ API keys are not in your GitHub repository
+- ✅ Different keys for staging/production if needed
+- ✅ Keys can be rotated without code changes
+- ✅ No risk of accidental commits
+- ✅ Netlify handles variable substitution automatically
+
+### Setting Environment Variables in Netlify:
+1. Go to your [Netlify dashboard](https://app.netlify.com/)
+2. Select your site → **Site Settings** → **Environment Variables**
+3. Click **"Add variable"**
+4. Enter the key and value
+5. Deploy to apply changes
 
 ---
+
+## 📊 Analytics Events Reference
 
 ### 3. Social Sharing Image (Open Graph)
 

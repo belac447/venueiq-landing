@@ -10,7 +10,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 // Configure GA4 - Replace 'G-XXXXXXXXXX' with your actual Measurement ID
-gtag('config', 'G-XXXXXXXXXX', {
+gtag('config', '<!-- GA_MEASUREMENT_ID -->', {
     'send_page_view': true,
     'anonymize_ip': true, // Privacy-friendly
     'cookie_flags': 'SameSite=None;Secure'

@@ -1,13 +1,56 @@
 [build]
-  # Static HTML site - no build command needed
-  command = "echo 'Static site - no build required'"
+  # Static HTML site with environment variable replacement
+  command = "echo 'Replacing environment variables...' && find . -name '*.js' -type f -exec sed -i \"s/<!-- GA_MEASUREMENT_ID -->/${GA_MEASUREMENT_ID:-G-XXXXXXXXXX}/g\" {} \\; && find . -name '*.js' -type f -exec sed -i \"s/<!-- FORMSPREE_FORM_ID -->/${FORMSPREE_FORM_ID:-YOUR_FORM_ID}/g\" {} \\;"
   publish = "."
+
+# Environment variables for API keys (set these in Netlify dashboard)
+# GA_MEASUREMENT_ID = "your-ga4-measurement-id"
+# FORMSPREE_FORM_ID = "your-formspree-form-id"
 
 # Explicitly disable Next.js plugin
 [build.plugins]
   # No plugins for static site
 
 # Redirects for single page app behavior
+[[redirects]]
+  from = "/demo/*"
+  to = "/demo/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/pages/*"
+  to = "/pages/:splat"
+  status = 200
+
+# Custom headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/demo/canvaskit/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 [[redirects]]
   from = "/demo/*"
   to = "/demo/:splat"
