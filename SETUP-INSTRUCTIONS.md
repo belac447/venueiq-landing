@@ -83,6 +83,38 @@ Track traffic, conversions, and user behavior.
 
 ---
 
+## 🔧 Local Development Setup
+
+### Environment Variables
+
+For local development, copy the provided `.env.example` file:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` with your actual API keys. The `.env` file is already in `.gitignore` for security.
+
+**Note:** For static HTML sites, environment variables are only available during the Netlify build process. For local development, you'll need to manually replace the placeholder values in the code, or use a local development server that supports environment variables.
+
+### Local Development Server
+
+For testing with environment variables locally, you can use a simple server:
+
+```bash
+# Install http-server globally
+npm install -g http-server
+http-server -p 8000
+
+# Or use Python
+python -m http.server 8000
+
+# Or use PHP
+php -S localhost:8000
+```
+
+---
+
 ## 📊 Analytics Events Reference
 
 ### 3. Demo App Firebase Setup (Interactive Demo)
