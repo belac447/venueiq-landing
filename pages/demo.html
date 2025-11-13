@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Try VenueIQ Demo - Interactive Restaurant Dashboard">
+    <meta name="description" content="Experience VenueIQ's restaurant intelligence platform with realistic sample data. No signup required. Explore cost control, revenue analytics, inventory tracking and menu engineering.">
+    <meta name="keywords" content="restaurant demo, cost control software demo, menu engineering tool, inventory management demo, restaurant analytics">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Try VenueIQ Interactive Demo">
+    <meta property="og:description" content="Explore the full platform with realistic restaurant data. No signup required.">
+    <meta property="og:image" content="https://venueiq-landing.web.app/images/demo-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Try VenueIQ Interactive Demo">
+    <meta property="twitter:description" content="Explore the full platform with realistic restaurant data. No signup required.">
+    
+    <title>Try VenueIQ Demo - Interactive Restaurant Dashboard</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #6C63FF 0%, #5B54E8 100%);
+            color: white;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logo svg {
+            width: 36px;
+            height: 36px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 24px;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .back-link:hover {
+            background: white;
+            color: #6C63FF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+        }
+        
+        .demo-intro {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+        
+        .demo-intro h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .demo-intro p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .control-btn {
+            padding: 12px 20px;
+            border: 2px solid #6C63FF;
+            background: white;
+            color: #6C63FF;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn:hover {
+            background: #6C63FF;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108,99,255,0.3);
+        }
+        
+        .demo-frame-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.15);
+            background: white;
+        }
+        
+        .demo-frame {
+            width: 100%;
+            height: 900px;
+            border: none;
+            display: block;
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .loading-overlay.hidden {
+            display: none;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #6C63FF;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .demo-cta {
+            max-width: 700px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 48px;
+            background: linear-gradient(135deg, #6C63FF 0%, #5B54E8 100%);
+            border-radius: 16px;
+            color: white;
+        }
+        
+        .demo-cta h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .demo-cta p {
+            font-size: 16px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #6C63FF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 32px 24px;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .feature-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .demo-intro h2 {
+                font-size: 28px;
+            }
+            
+            .demo-intro p {
+                font-size: 16px;
+            }
+            
+            .demo-frame {
+                height: 700px;
+            }
+            
+            .demo-controls {
+                flex-wrap: wrap;
+            }
+            
+            .demo-cta {
+                padding: 32px 24px;
+            }
+            
+            .demo-cta h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="white" fill-opacity="0.2"/>
+                    <path d="M12 9L16 15L12 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 9L20 15L16 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                </svg>
+                <h1>VenueIQ</h1>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Demo Intro -->
+    <div class="demo-intro">
+        <h2>Interactive Demo</h2>
+        <p>
+            Explore VenueIQ with realistic restaurant data from Demo Pizzeria. 
+            Click through all features, view reports, and see how the platform works. 
+            No signup required.
+        </p>
+    </div>
+
+    <!-- Demo Container -->
+    <div class="demo-container">
+        <!-- Controls -->
+        <div class="demo-controls">
+            <button class="control-btn" onclick="resetDemo()">
+                Reset Demo
+            </button>
+            <button class="control-btn" onclick="toggleFullscreen()">
+                Fullscreen
+            </button>
+        </div>
+
+        <!-- Demo Frame -->
+        <div class="demo-frame-wrapper">
+            <div class="loading-overlay" id="loading">
+                <div class="spinner"></div>
+                <p class="loading-text">Loading interactive demo...</p>
+            </div>
+            
+            <iframe 
+                src="../demo/index.html" 
+                class="demo-frame"
+                id="demoFrame"
+                onload="hideLoading()"
+                title="VenueIQ Interactive Demo">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- What to Explore -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h4>CostIQ</h4>
+            <p>Browse recipes, view ingredient costs, and analyze profit margins</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h4>RevenueIQ</h4>
+            <p>Check sales analytics, trends, and performance metrics</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h4>StockIQ</h4>
+            <p>Monitor inventory levels, suppliers, and purchase orders</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🍕</div>
+            <h4>MenuIQ</h4>
+            <p>Analyze menu performance with BCG matrix and optimization</p>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="demo-cta">
+        <h3>Ready to optimize your venue?</h3>
+        <p>
+            Create your free account and connect your real data. 
+            Get insights in minutes, not hours.
+        </p>
+        <a href="../index.html" class="cta-btn">
+            Get Started Free →
+        </a>
+    </div>
+
+    <script>
+        function hideLoading() {
+            document.getElementById('loading').classList.add('hidden');
+        }
+
+        function resetDemo() {
+            const frame = document.getElementById('demoFrame');
+            const loading = document.getElementById('loading');
+            
+            loading.classList.remove('hidden');
+            frame.src = frame.src; // Reload iframe
+        }
+
+        function toggleFullscreen() {
+            const wrapper = document.querySelector('.demo-frame-wrapper');
+            
+            if (!document.fullscreenElement) {
+                wrapper.requestFullscreen().catch(err => {
+                    console.log('Fullscreen error:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Analytics tracking (replace with your GA4 code)
+        function trackEvent(action, label) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': 'Demo',
+                    'event_label': label
+                });
+            }
+        }
+
+        // Track demo load
+        window.addEventListener('load', () => {
+            trackEvent('demo_page_view', 'Demo Page Loaded');
+        });
+
+        // Track iframe load
+        document.getElementById('demoFrame').addEventListener('load', () => {
+            trackEvent('demo_loaded', 'Interactive Demo Loaded');
+        });
+
+        // Track fullscreen
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                trackEvent('demo_fullscreen', 'Entered Fullscreen');
+            }
+        });
+    </script>
+</body>
+</html>

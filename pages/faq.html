@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="FAQ - VenueIQ | Common Questions Answered">
+    <meta name="description" content="VenueIQ FAQ - Answers to common questions about features, pricing, implementation, security, and support. Everything you need to know before getting started.">
+    <meta name="keywords" content="venueiq faq, restaurant software questions, pricing questions, implementation guide, technical support">
+    <meta name="author" content="VenueIQ">
+    <meta name="theme-color" content="#6C63FF">
+    <title>FAQ - VenueIQ | Restaurant Intelligence Platform</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://venueiq-landing.web.app/pages/faq.html">
+    <meta property="og:title" content="VenueIQ FAQ - Your Questions Answered">
+    <meta property="og:description" content="Common questions about VenueIQ features, pricing, getting started, technical details, and support. Find quick answers to everything you need to know.">
+    <meta property="og:image" content="https://venueiq-landing.web.app/images/og-image.jpg">
+    <meta property="og:site_name" content="VenueIQ">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://venueiq-landing.web.app/pages/faq.html">
+    <meta property="twitter:title" content="VenueIQ FAQ - Your Questions Answered">
+    <meta property="twitter:description" content="Common questions about VenueIQ features, pricing, getting started, technical details, and support. Find quick answers to everything you need to know.">
+    <meta property="twitter:image" content="https://venueiq-landing.web.app/images/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://venueiq-landing.web.app/pages/faq.html">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(108, 99, 255, 0.15);
+        }
+        
+        .faq-item:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            gap: 1rem;
+        }
+        
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+        
+        .faq-item.active .faq-icon {
+            background: var(--primary);
+            color: white;
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .faq-item.active .faq-answer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-category-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M12 9L16 15L12 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 9L20 15L16 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#6C63FF"/>
+                            <stop offset="100%" stop-color="#00C897"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text"><a href="../index.html" style="text-decoration: none; color: inherit;">VenueIQ</a></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="case-studies.html" class="nav-link">Case Studies</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="demo.html" class="btn btn-primary btn-sm">Interactive Demo</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-badge" data-aos="fade-up">Common Questions</span>
+            <h1 data-aos="fade-up">
+                Frequently Asked<br/>
+                <span class="gradient-text">Questions</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Everything you need to know about VenueIQ. Can't find your answer? <a href="contact.html" style="color: var(--primary); text-decoration: underline;">Contact us</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="content-section">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- General Questions -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">🎯 General Questions</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What is VenueIQ?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        VenueIQ is a restaurant intelligence platform that integrates recipe costing, sales analytics, inventory management, and menu engineering into one system. Instead of managing 15 different spreadsheets, you get real-time visibility into your venue's financial performance in one place.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Who built VenueIQ?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        VenueIQ was built by an accountant who spent years working in hospitality. Frustrated with fragmented spreadsheets and disconnected systems, they built the analytics platform they wish they had when doing this work manually. It's built by someone who knows both worlds - accounting discipline and operational chaos.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What does "early access" mean?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        VenueIQ is live and functional with 4 integrated modules working in production. "Early access" means we're actively improving based on feedback from beta partners. You get a working product now, plus the ability to influence what features we build next. Early adopters also get preferential pricing that locks in below future standard rates.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What makes VenueIQ different from other restaurant software?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Most restaurant software is built by tech people who've never worked a shift. They add features that sound good but don't match reality. VenueIQ is different - it's built by someone who's lived the pain of managing venue finances manually. Every feature exists because it solved a real problem the founder experienced firsthand.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features & Functionality -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">⚡ Features & Functionality</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What are the 4 modules?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <strong>CostIQ:</strong> Recipe costing with real-time ingredient tracking and automatic price updates.<br><br>
+                        <strong>RevenueIQ:</strong> Sales analytics, trend analysis, and best seller identification.<br><br>
+                        <strong>StockIQ:</strong> Inventory management, supplier tracking, and low stock alerts.<br><br>
+                        <strong>MenuIQ:</strong> Menu engineering with BCG matrix analysis and profitability optimization.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Does VenueIQ integrate with my POS system?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Currently, VenueIQ works via CSV import from any POS system. Export your sales data, upload to VenueIQ, and we handle the rest. Direct API integrations are on the roadmap, and early access partners help prioritize which POS systems we integrate with first.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How does real-time cost tracking work?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        When you process a supplier invoice in StockIQ, ingredient prices automatically update across all recipes that use those ingredients. Historical cost snapshots let you see exactly when and how costs changed. You can set alerts to notify you when recipe costs increase beyond your threshold (e.g., 5%).
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What is BCG matrix analysis?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        BCG matrix is a menu engineering framework that classifies dishes into 4 categories:<br><br>
+                        <strong>Stars:</strong> High popularity, high profitability - promote these!<br>
+                        <strong>Cash Cows:</strong> Lower popularity but high profit - keep them for profit margins.<br>
+                        <strong>Question Marks:</strong> High popularity but low profit - reprice or restructure.<br>
+                        <strong>Dogs:</strong> Low popularity, low profit - consider removing from menu.<br><br>
+                        VenueIQ automatically calculates this using your sales data and recipe costs.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can I track multiple venues?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Multi-venue support is coming soon. Current early access partners with multiple locations can track each venue separately and we're prioritizing this feature based on demand. Let us know if this is critical for you.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing & Access -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">💰 Pricing & Access</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How much does VenueIQ cost?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        We're flexible for early adopters. Pricing depends on venue size and needs. Reach out and we'll find a price that works. Beta partners get locked-in rates below our future standard pricing. No 18-month contracts - month-to-month for early access partners.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is there a free trial?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        You can try the full live demo immediately - no signup required. Demo credentials are: <strong>demo@venueiq.app</strong> / <strong>demo123demo</strong>. For actual use with your venue's data, we offer flexible onboarding for early access partners. Contact us to discuss your specific situation.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What's included in early access?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        • Full access to all 4 modules (CostIQ, RevenueIQ, StockIQ, MenuIQ)<br>
+                        • Direct founder support (email, calls, feature requests)<br>
+                        • Influence on roadmap - your feedback shapes what we build<br>
+                        • Founder pricing lock-in when we move to standard pricing<br>
+                        • Custom onboarding - we help you import data and set everything up<br>
+                        • No long-term contracts - month-to-month commitment
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is there a contract or cancellation fee?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        No long-term contracts for early access partners. Month-to-month arrangements. We earn your business every month by being useful. No cancellation fees or gotchas.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting Started -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">🚀 Getting Started</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How long does setup take?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Basic setup takes 15-30 minutes. Adding your full menu, recipes, and historical data might take a few hours depending on your venue size. Early access partners get custom onboarding - we help you through the process and can even assist with data entry if needed.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Do I need to migrate from existing systems?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        VenueIQ doesn't replace your POS or accounting software - it connects to them. Think of it as the analytics layer that sits on top, pulling data from various sources to give you unified insights. You keep using your existing systems; VenueIQ just makes sense of the data.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can I import existing recipe data?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! If you have recipes in spreadsheets, we can help you bulk import them. The format is flexible - we've imported from Excel, Google Sheets, and various restaurant management systems. Early access partners get hands-on help with data migration.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What if I need a feature that doesn't exist yet?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Tell us! As an early access partner, your feature requests go to the top of the roadmap. We're building this with real operators, not hypothetical users. If multiple partners need the same thing, we prioritize it. We ship quickly and iterate based on real feedback.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Questions -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">🔧 Technical Questions</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is VenueIQ cloud-based or installed software?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Cloud-based. Access from any device with a web browser - desktop, tablet, or phone. No installation required. Your data is securely stored and backed up automatically.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is my data secure?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. VenueIQ uses industry-standard encryption for data transmission and storage. Your recipe data, supplier information, and sales analytics are private and not shared with third parties. Regular backups ensure your data is never lost.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What browsers are supported?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        VenueIQ works on all modern browsers: Chrome, Firefox, Safari, and Edge. Mobile browsers are fully supported too, though some complex data entry tasks are easier on desktop.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can I export my data?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. Your data is yours. You can export recipes, costs, inventory, and sales data to CSV format anytime. No lock-in, no proprietary formats.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="faq-category" data-aos="fade-up">
+                <h2 class="faq-category-title">💬 Support</h2>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What kind of support do you offer?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Early access partners get direct founder support via email and calls. Response time is usually within 24 hours, often faster. Support issues are prioritized, and feature requests are taken seriously. You're working directly with the person who built VenueIQ.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Is there documentation and training?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Check out the <a href="help.html" style="color: var(--primary); text-decoration: underline;">Help Center</a> for guides and tutorials. Video tutorials are in progress. Early access partners also get personalized onboarding and training sessions to ensure you're getting maximum value.
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What if something breaks or doesn't work?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Contact us immediately. As an early access platform, we're honest about the occasional bug or limitation. Report it, and we'll prioritize a fix. Beta partners get fast response times because we're actively iterating based on real-world usage.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Still Have Questions CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="cta-title">Still Have Questions?<br/><span class="gradient-text-light">Let's Talk</span></h2>
+                <p class="cta-subtitle">Get in touch for answers specific to your venue's needs.</p>
+                
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        💬 Contact Us
+                    </a>
+                    <a href="demo.html" class="btn btn-outline-white btn-large">
+                        🚀 Try Interactive Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#logo-gradient-footer)"/>
+                            <path d="M12 9L16 15L12 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 9L20 15L16 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                            <defs>
+                                <linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#6C63FF"/>
+                                    <stop offset="100%" stop-color="#00C897"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>VenueIQ</span>
+                    </div>
+                    <p>Built by an accountant who spent years in hospitality. Tired of fragmented spreadsheets and disconnected systems, I built what I wish I had.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="demo.html">Interactive Demo</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Get in Touch</a>
+                    <a href="help.html">Help Center</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mailto:support@venueiq.app">Contact Support</a>
+                    <a href="help.html">Documentation</a>
+                    <a href="faq.html">Common Questions</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 VenueIQ. Early Access.</p>
+                <p>Where finance meets hospitality. Built by someone who's done both.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script src="../js/script.js"></script>
+    
+    <script>
+        // FAQ Accordion with smooth animations and accessibility
+        function toggleFAQ(element) {
+            const wasActive = element.classList.contains('active');
+            const answer = element.querySelector('.faq-answer');
+            
+            // Close all FAQ items with smooth animation
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const itemAnswer = item.querySelector('.faq-answer');
+                item.classList.remove('active');
+                itemAnswer.style.maxHeight = '0px';
+                
+                // Update icon
+                const icon = item.querySelector('.faq-icon');
+                icon.textContent = '+';
+            });
+            
+            // Open clicked item if it wasn't already open
+            if (!wasActive) {
+                element.classList.add('active');
+                
+                // Set max-height to scrollHeight for smooth animation
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                
+                // Update icon
+                const icon = element.querySelector('.faq-icon');
+                icon.textContent = '−';
+                
+                // Track FAQ interaction
+                if (typeof gtag !== 'undefined') {
+                    const question = element.querySelector('.faq-question span').textContent;
+                    gtag('event', 'faq_expand', {
+                        'event_category': 'engagement',
+                        'event_label': question
+                    });
+                }
+                
+                // Scroll into view if needed
+                setTimeout(() => {
+                    const rect = element.getBoundingClientRect();
+                    const isInViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
+                    
+                    if (!isInViewport) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 300);
+            }
+        }
+        
+        // Keyboard accessibility - Allow Enter/Space to toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-expanded', 'false');
+                
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFAQ(item);
+                        
+                        // Update aria-expanded
+                        const isActive = item.classList.contains('active');
+                        item.setAttribute('aria-expanded', isActive);
+                    }
+                });
+            });
+            
+            // Allow opening FAQ from URL hash (e.g., #faq-pricing)
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetItem = document.getElementById(targetId);
+                
+                if (targetItem && targetItem.classList.contains('faq-item')) {
+                    setTimeout(() => {
+                        toggleFAQ(targetItem);
+                        targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

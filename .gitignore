@@ -1,0 +1,22 @@
+# Netlify
+.netlify/
+
+# Node modules (if any dependencies are added)
+node_modules/
+
+# Firebase cache
+.firebase/
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~

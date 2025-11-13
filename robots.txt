@@ -1,0 +1,13 @@
+# robots.txt for VenueIQ Landing Page
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://venueiq-landing.web.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Disallow admin/backend paths (if any in future)
+Disallow: /admin/
+Disallow: /.git/
