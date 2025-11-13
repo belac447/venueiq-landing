@@ -495,6 +495,45 @@
                 handleIframeError();
             }
         }, 30000);
+
+        // Scroll isolation for iframe - prevent parent page scrolling when mouse is over demo
+        const demoWrapper = document.querySelector('.demo-frame-wrapper');
+        let isMouseOverDemo = false;
+        
+        demoWrapper.addEventListener('mouseenter', function() {
+            isMouseOverDemo = true;
+        });
+        
+        demoWrapper.addEventListener('mouseleave', function() {
+            isMouseOverDemo = false;
+        });
+        
+        // Prevent parent page scrolling when mouse is over demo iframe
+        document.addEventListener('wheel', function(e) {
+            if (isMouseOverDemo) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }, { passive: false });
+        
+        // Handle touch events for mobile devices
+        document.addEventListener('touchmove', function(e) {
+            if (isMouseOverDemo) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }, { passive: false });
+        
+        // Add visual feedback when hovering over demo
+        demoWrapper.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 20px 80px rgba(108, 99, 255, 0.3)';
+        });
+        
+        demoWrapper.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 20px 80px rgba(0,0,0,0.15)';
+        });
     </script>
 </body>
 </html>
