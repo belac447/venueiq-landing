@@ -496,43 +496,77 @@
             }
         }, 30000);
 
-        // Scroll isolation for iframe - prevent parent page scrolling when mouse is over demo
+        // Scroll isolation for iframe - intelligent scroll handling
         const demoWrapper = document.querySelector('.demo-frame-wrapper');
+        const demoFrame = document.getElementById('demoFrame');
         let isMouseOverDemo = false;
-        
+        let iframeScrollTimeout;
+
         demoWrapper.addEventListener('mouseenter', function() {
             isMouseOverDemo = true;
         });
-        
+
         demoWrapper.addEventListener('mouseleave', function() {
             isMouseOverDemo = false;
         });
-        
-        // Prevent parent page scrolling when mouse is over demo iframe
+
+        // Smart scroll handling: allow iframe to scroll first, prevent parent only when necessary
         document.addEventListener('wheel', function(e) {
             if (isMouseOverDemo) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
+                // Check if iframe is loaded and can receive focus
+                try {
+                    const iframeDoc = demoFrame.contentDocument || demoFrame.contentWindow.document;
+                    if (iframeDoc) {
+                        // Let iframe handle scrolling naturally, but prevent parent scroll bubbling
+                        e.stopPropagation();
+
+                        // If iframe can't scroll in the requested direction, allow parent scroll
+                        const iframeWindow = demoFrame.contentWindow;
+                        const iframeBody = iframeDoc.body;
+
+                        if (iframeBody) {
+                            const atTop = iframeBody.scrollTop <= 0;
+                            const atBottom = iframeBody.scrollTop >= (iframeBody.scrollHeight - iframeBody.clientHeight - 1);
+
+                            // If at top and scrolling up, or at bottom and scrolling down, allow parent scroll
+                            if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+                                // Allow parent scroll by not preventing default
+                                return true;
+                            }
+                        }
+
+                        // Prevent parent scroll - let iframe handle it
+                        e.preventDefault();
+                        return false;
+                    }
+                } catch (error) {
+                    // Cross-origin restrictions, fallback to preventing parent scroll
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                }
             }
         }, { passive: false });
-        
-        // Handle touch events for mobile devices
+
+        // Handle touch events for mobile
         document.addEventListener('touchmove', function(e) {
             if (isMouseOverDemo) {
-                e.preventDefault();
                 e.stopPropagation();
+                // For touch, be more conservative and prevent parent scrolling
+                e.preventDefault();
                 return false;
             }
         }, { passive: false });
-        
+
         // Add visual feedback when hovering over demo
         demoWrapper.addEventListener('mouseenter', function() {
             this.style.boxShadow = '0 20px 80px rgba(108, 99, 255, 0.3)';
+            this.style.transform = 'translateY(-2px)';
         });
-        
+
         demoWrapper.addEventListener('mouseleave', function() {
             this.style.boxShadow = '0 20px 80px rgba(0,0,0,0.15)';
+            this.style.transform = 'translateY(0)';
         });
     </script>
 </body>
