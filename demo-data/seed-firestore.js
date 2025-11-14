@@ -319,7 +319,7 @@ const recipes = [
 ];
 
 const sales = {
-  '2025-11-01': {
+  '2025-10-31': {
     rec_001: { quantity: 32, revenue: 479.68 },
     rec_002: { quantity: 45, revenue: 764.55 },
     rec_003: { quantity: 40, revenue: 519.60 },
@@ -327,7 +327,7 @@ const sales = {
     rec_005: { quantity: 18, revenue: 161.82 },
     rec_006: { quantity: 47, revenue: 845.53 }
   },
-  '2025-11-02': {
+  '2025-11-01': {
     rec_001: { quantity: 35, revenue: 524.65 },
     rec_002: { quantity: 48, revenue: 815.52 },
     rec_003: { quantity: 38, revenue: 493.62 },
@@ -335,7 +335,7 @@ const sales = {
     rec_005: { quantity: 20, revenue: 179.80 },
     rec_006: { quantity: 45, revenue: 809.55 }
   },
-  '2025-11-03': {
+  '2025-11-02': {
     rec_001: { quantity: 38, revenue: 569.62 },
     rec_002: { quantity: 52, revenue: 883.48 },
     rec_003: { quantity: 42, revenue: 545.58 },
@@ -343,7 +343,7 @@ const sales = {
     rec_005: { quantity: 22, revenue: 197.78 },
     rec_006: { quantity: 50, revenue: 899.50 }
   },
-  '2025-11-04': {
+  '2025-11-03': {
     rec_001: { quantity: 30, revenue: 449.70 },
     rec_002: { quantity: 42, revenue: 713.58 },
     rec_003: { quantity: 35, revenue: 454.65 },
@@ -351,7 +351,7 @@ const sales = {
     rec_005: { quantity: 16, revenue: 143.84 },
     rec_006: { quantity: 40, revenue: 719.60 }
   },
-  '2025-11-05': {
+  '2025-11-04': {
     rec_001: { quantity: 40, revenue: 599.60 },
     rec_002: { quantity: 55, revenue: 934.45 },
     rec_003: { quantity: 45, revenue: 584.55 },
@@ -359,7 +359,7 @@ const sales = {
     rec_005: { quantity: 24, revenue: 215.76 },
     rec_006: { quantity: 52, revenue: 935.48 }
   },
-  '2025-11-06': {
+  '2025-11-05': {
     rec_001: { quantity: 42, revenue: 629.58 },
     rec_002: { quantity: 58, revenue: 985.42 },
     rec_003: { quantity: 48, revenue: 623.52 },
@@ -367,7 +367,7 @@ const sales = {
     rec_005: { quantity: 26, revenue: 233.74 },
     rec_006: { quantity: 55, revenue: 989.45 }
   },
-  '2025-11-07': {
+  '2025-11-06': {
     rec_001: { quantity: 36, revenue: 539.64 },
     rec_002: { quantity: 50, revenue: 849.50 },
     rec_003: { quantity: 42, revenue: 545.58 },
@@ -375,7 +375,7 @@ const sales = {
     rec_005: { quantity: 22, revenue: 197.78 },
     rec_006: { quantity: 48, revenue: 863.52 }
   },
-  '2025-11-08': {
+  '2025-11-07': {
     rec_001: { quantity: 34, revenue: 509.66 },
     rec_002: { quantity: 46, revenue: 781.54 },
     rec_003: { quantity: 40, revenue: 519.60 },
@@ -383,7 +383,7 @@ const sales = {
     rec_005: { quantity: 20, revenue: 179.80 },
     rec_006: { quantity: 44, revenue: 791.56 }
   },
-  '2025-11-09': {
+  '2025-11-08': {
     rec_001: { quantity: 32, revenue: 479.68 },
     rec_002: { quantity: 44, revenue: 747.56 },
     rec_003: { quantity: 38, revenue: 493.62 },
@@ -391,7 +391,7 @@ const sales = {
     rec_005: { quantity: 18, revenue: 161.82 },
     rec_006: { quantity: 42, revenue: 755.58 }
   },
-  '2025-11-10': {
+  '2025-11-09': {
     rec_001: { quantity: 38, revenue: 569.62 },
     rec_002: { quantity: 52, revenue: 883.48 },
     rec_003: { quantity: 44, revenue: 571.56 },
@@ -399,7 +399,7 @@ const sales = {
     rec_005: { quantity: 24, revenue: 215.76 },
     rec_006: { quantity: 50, revenue: 899.50 }
   },
-  '2025-11-11': {
+  '2025-11-10': {
     rec_001: { quantity: 36, revenue: 539.64 },
     rec_002: { quantity: 48, revenue: 815.52 },
     rec_003: { quantity: 42, revenue: 545.58 },
@@ -407,7 +407,7 @@ const sales = {
     rec_005: { quantity: 22, revenue: 197.78 },
     rec_006: { quantity: 46, revenue: 827.54 }
   },
-  '2025-11-12': {
+  '2025-11-11': {
     rec_001: { quantity: 40, revenue: 599.60 },
     rec_002: { quantity: 54, revenue: 917.46 },
     rec_003: { quantity: 46, revenue: 597.54 },
@@ -415,7 +415,7 @@ const sales = {
     rec_005: { quantity: 26, revenue: 233.74 },
     rec_006: { quantity: 52, revenue: 935.48 }
   },
-  '2025-11-13': {
+  '2025-11-12': {
     rec_001: { quantity: 42, revenue: 629.58 },
     rec_002: { quantity: 56, revenue: 951.44 },
     rec_003: { quantity: 48, revenue: 623.52 },
@@ -423,7 +423,7 @@ const sales = {
     rec_005: { quantity: 28, revenue: 251.72 },
     rec_006: { quantity: 54, revenue: 971.46 }
   },
-  '2025-11-14': {
+  '2025-11-13': {
     rec_001: { quantity: 34, revenue: 509.66 },
     rec_002: { quantity: 46, revenue: 781.54 },
     rec_003: { quantity: 40, revenue: 519.60 },
