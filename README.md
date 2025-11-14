@@ -134,7 +134,7 @@ vercel --prod
 - Current status (early access, actively building)
 
 ### Contact (`pages/contact.html`)
-- Email: contact@venueiq.app
+- Email: caleb@venueiq.pro
 - Response time expectations
 - What to expect for inquiries
 - Demo credentials (copy-to-clipboard)
@@ -151,9 +151,9 @@ https://restaurant-dashboard-91192.web.app
 With your custom domain when ready.
 
 ### Update Email Addresses
-- `contact@venueiq.app` - General inquiries
-- `support@venueiq.app` - Support requests
-- `demo@venueiq.app` - Demo credentials
+- `caleb@venueiq.pro` - General inquiries
+- `caleb@venueiq.pro` - Support requests
+- `caleb@venueiq.pro` - Demo credentials
 
 ### Add Real Screenshots
 1. Take screenshots of actual app
@@ -242,7 +242,7 @@ Edit CSS variables in `css/styles.css`:
 
 ### App Integration
 - Demo launches at: `https://restaurant-dashboard-91192.web.app`
-- Demo credentials: `demo@venueiq.app` / `demo123demo`
+- Demo credentials: `caleb@venueiq.pro` / `demo123demo`
 
 ### Social Media (To Add)
 - Twitter: Update footer links when ready
@@ -329,12 +329,12 @@ Before deploying:
 
 **Founder:** Built by an accountant with finance degree who spent years in hospitality
 
-**Contact:** contact@venueiq.app
+**Contact:** caleb@venueiq.pro
 
 **App:** https://restaurant-dashboard-91192.web.app
 
 **Demo Credentials:**
-- Email: demo@venueiq.app
+- Email: caleb@venueiq.pro
 - Password: demo123demo
 
 ---
@@ -366,7 +366,7 @@ Before deploying:
 4. **Analytics:** Set up tracking (GA4, Plausible, etc.)
 5. **Social:** Create Twitter/LinkedIn accounts and update footer links
 6. **Blog:** Consider adding blog section for content marketing
-7. **Email:** Set up email forwarding for contact@venueiq.app
+7. **Email:** Set up email forwarding for caleb@venueiq.pro
 8. **Testing:** Share with friends/family for feedback
 9. **Beta Partners:** Start reaching out to potential early adopters
 10. **Iterate:** Update messaging based on real conversations

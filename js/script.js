@@ -448,7 +448,7 @@ function initContactForm() {
         } catch (error) {
             // Error state
             formStatus.className = 'form-status error';
-            formStatus.textContent = '✗ Oops! Something went wrong. Please try emailing contact@venueiq.app directly.';
+            formStatus.textContent = '✗ Oops! Something went wrong. Please try emailing caleb@venueiq.pro directly.';
             console.error('Form submission error:', error);
         } finally {
             // Reset button
