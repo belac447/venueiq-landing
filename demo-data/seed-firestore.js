@@ -19,14 +19,25 @@ const path = require('path');
 // ============================================
 // Initialize Firebase Admin
 // ============================================
+let serviceAccount;
+
+// Try to load service account key
 try {
+  serviceAccount = require('./serviceAccountKey.json');
   admin.initializeApp({
-    credential: admin.credential.applicationDefault()
+    credential: admin.credential.cert(serviceAccount)
   });
-  console.log('✅ Firebase Admin initialized');
+  console.log('✅ Firebase Admin initialized with service account');
 } catch (error) {
-  console.log('⚠️  Using service account from GOOGLE_APPLICATION_CREDENTIALS');
-  // Will use GOOGLE_APPLICATION_CREDENTIALS env var
+  console.error('❌ Error: Could not find serviceAccountKey.json');
+  console.error('');
+  console.error('Please download your service account key:');
+  console.error('1. Go to https://console.firebase.google.com/');
+  console.error('2. Select your project → Project Settings → Service Accounts');
+  console.error('3. Click "Generate New Private Key"');
+  console.error('4. Save as: demo-data/serviceAccountKey.json');
+  console.error('');
+  process.exit(1);
 }
 
 const db = admin.firestore();
