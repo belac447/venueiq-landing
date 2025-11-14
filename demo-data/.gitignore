@@ -1,0 +1,7 @@
+# Firestore Seeder
+
+node_modules/
+serviceAccountKey.json
+*.json
+!package.json
+!seed-firebase.json

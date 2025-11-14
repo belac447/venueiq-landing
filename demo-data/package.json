@@ -1,0 +1,15 @@
+{
+  "name": "venueiq-demo-seeder",
+  "version": "1.0.0",
+  "description": "Seeds Firestore database with VenueIQ demo data",
+  "main": "seed-firestore.js",
+  "scripts": {
+    "seed": "node seed-firestore.js"
+  },
+  "keywords": ["venueiq", "firestore", "demo", "seeder"],
+  "author": "VenueIQ",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}
